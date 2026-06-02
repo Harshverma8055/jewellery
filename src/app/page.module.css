@@ -1,0 +1,775 @@
+/* ══════════════════════════════════════════
+   SAMAIRA — HOME PAGE STYLES
+   Deep Teal × Champagne Gold Luxury System
+   ══════════════════════════════════════════ */
+
+/* ── CATEGORIES ── */
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.categoryCard {
+  position: relative;
+  height: 480px;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+  transition: var(--transition-smooth);
+}
+
+.categoryCard:hover {
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-gold);
+}
+
+.categoryImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-cinematic);
+  filter: brightness(0.85) contrast(1.05);
+}
+
+.categoryCard:hover .categoryImg {
+  transform: scale(1.08);
+  filter: brightness(0.75) contrast(1.1);
+}
+
+.categoryOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(13, 38, 38, 0.9) 0%,
+    rgba(13, 38, 38, 0.3) 40%,
+    transparent 70%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 36px 24px;
+  transition: var(--transition-smooth);
+}
+
+.categoryCard:hover .categoryOverlay {
+  background: linear-gradient(
+    to top,
+    rgba(13, 38, 38, 0.95) 0%,
+    rgba(26, 58, 58, 0.4) 50%,
+    transparent 80%
+  );
+}
+
+.categoryName {
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.categoryCount {
+  color: var(--color-gold);
+  font-size: var(--text-micro);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: var(--transition-smooth);
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+.categoryCard:hover .categoryCount {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── PRODUCT CARDS ── */
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.productCard {
+  background: var(--surface-elevated);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  position: relative;
+}
+
+.productCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--border-light);
+}
+
+.productImgWrapper {
+  position: relative;
+  height: 360px;
+  overflow: hidden;
+  background: linear-gradient(145deg, var(--color-teal-dark), var(--surface-primary));
+}
+
+.productImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-dramatic);
+}
+
+.productCard:hover .productImg {
+  transform: scale(1.05);
+}
+
+.productBadge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--color-gold);
+  color: var(--text-on-gold);
+  font-size: var(--text-micro);
+  padding: 5px 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--font-body);
+}
+
+.productWishlist {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--surface-glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-light);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  color: var(--text-secondary);
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.productCard:hover .productWishlist {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.productWishlist:hover {
+  background: var(--color-gold);
+  color: var(--text-on-gold);
+  border-color: var(--color-gold);
+}
+
+.productActions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  gap: 0;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: var(--transition-smooth);
+}
+
+.productCard:hover .productActions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.actionBtn {
+  flex: 1;
+  padding: 14px;
+  font-size: var(--text-overline);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: var(--font-body);
+}
+
+.addCartBtn {
+  background: var(--color-gold);
+  color: var(--text-on-gold);
+}
+
+.addCartBtn:hover {
+  background: var(--color-gold-bright);
+}
+
+.quickViewBtn {
+  background: var(--surface-glass);
+  color: var(--color-gold);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+}
+
+.quickViewBtn:hover {
+  background: var(--surface-card-hover);
+}
+
+.productInfo {
+  padding: 24px 20px;
+  text-align: center;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.productName {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.productMaterial {
+  font-size: var(--text-micro);
+  color: var(--text-tertiary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.productPrice {
+  color: var(--color-gold);
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-family: var(--font-body);
+}
+
+.productPriceOld {
+  color: var(--text-tertiary);
+  text-decoration: line-through;
+  font-size: var(--text-caption);
+  margin-left: 8px;
+  font-weight: 400;
+}
+
+/* ── BRIDAL SHOWCASE ── */
+.bridalShowcase {
+  display: flex;
+  align-items: stretch;
+  background: var(--color-teal-midnight);
+  min-height: 600px;
+  overflow: hidden;
+  position: relative;
+}
+
+.showcaseContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 8%;
+  position: relative;
+  z-index: 2;
+}
+
+.showcaseLabel {
+  font-size: var(--text-overline);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 20px;
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+.showcaseTitle {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  font-size: var(--text-h1);
+  font-weight: 400;
+  margin-bottom: 24px;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+.showcaseText {
+  color: var(--text-secondary);
+  font-size: var(--text-body);
+  line-height: 1.9;
+  margin-bottom: 40px;
+  font-weight: 300;
+  max-width: 450px;
+}
+
+.showcaseImage {
+  flex: 1;
+  position: relative;
+  min-height: 600px;
+}
+
+.showcaseImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── TRUST SECTION ── */
+.trustSection {
+  background: var(--surface-elevated);
+  padding: 80px 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.trustGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.trustItem {
+  text-align: center;
+  padding: 40px 30px;
+  border-right: 1px solid var(--border-subtle);
+  transition: var(--transition-smooth);
+}
+
+.trustItem:last-child { border-right: none; }
+
+.trustItem:hover {
+  background: rgba(201, 169, 110, 0.04);
+}
+
+.trustIcon {
+  color: var(--color-gold);
+  margin-bottom: 20px;
+}
+
+.trustTitle {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.trustDesc {
+  color: var(--text-secondary);
+  font-size: var(--text-body-sm);
+  font-weight: 300;
+}
+
+/* ── TESTIMONIALS ── */
+.testimonialSection {
+  padding: var(--section-padding) 0;
+  background: var(--surface-primary);
+}
+
+.testimonialGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.testimonialCard {
+  background: var(--surface-elevated);
+  padding: 40px 32px;
+  border: 1px solid var(--border-subtle);
+  transition: var(--transition-smooth);
+  position: relative;
+  border-radius: 4px;
+}
+
+.testimonialCard:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+  border-color: var(--border-light);
+}
+
+.testimonialQuote {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  color: var(--color-gold);
+  line-height: 1;
+  margin-bottom: 16px;
+  opacity: 0.6;
+}
+
+.testimonialText {
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.testimonialStars {
+  color: var(--color-gold);
+  margin-bottom: 16px;
+  display: flex;
+  gap: 3px;
+}
+
+.testimonialAuthor {
+  font-weight: 500;
+  font-size: var(--text-body-sm);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+}
+
+.testimonialLocation {
+  font-size: var(--text-caption);
+  color: var(--text-tertiary);
+  margin-top: 2px;
+  letter-spacing: 1px;
+}
+
+/* ── INSTAGRAM ── */
+.instagramSection {
+  padding: 80px 0 0;
+  overflow: hidden;
+}
+
+.instagramGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 3px;
+}
+
+.instagramItem {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.instagramItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-dramatic);
+  filter: brightness(0.9);
+}
+
+.instagramItem:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.7);
+}
+
+.instagramOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 38, 38, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition-smooth);
+  color: var(--color-gold);
+}
+
+.instagramItem:hover .instagramOverlay { opacity: 1; }
+
+/* ── COLLECTION BANNER ── */
+.collectionBanner {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.collectionBannerImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.collectionBannerOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(13, 38, 38, 0.8) 0%,
+    rgba(5, 5, 7, 0.5) 100%
+  );
+}
+
+.collectionBannerContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.collectionBannerContent h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.collectionBannerContent p {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--color-jet);
+  color: var(--text-primary);
+  padding: 100px 0 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.3fr;
+  gap: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.footerLogo {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--color-gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footerDesc {
+  color: var(--text-tertiary);
+  font-size: var(--text-body-sm);
+  line-height: 1.8;
+  max-width: 320px;
+  font-weight: 300;
+}
+
+.footerTitle {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.footerLinks { list-style: none; }
+
+.footerLinks li { margin-bottom: 12px; }
+
+.footerLinks a {
+  color: var(--text-tertiary);
+  font-size: var(--text-body-sm);
+  font-weight: 300;
+  transition: var(--transition-fast);
+  position: relative;
+}
+
+.footerLinks a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-gold);
+  transition: var(--transition-smooth);
+}
+
+.footerLinks a:hover {
+  color: var(--color-gold);
+}
+
+.footerLinks a:hover::after {
+  width: 100%;
+}
+
+.footerNewsletter p {
+  color: var(--text-tertiary);
+  font-size: var(--text-body-sm);
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.footerBottom {
+  text-align: center;
+  padding: 30px 0;
+  color: var(--text-tertiary);
+  font-size: var(--text-caption);
+  letter-spacing: 1.5px;
+}
+
+/* ── WHATSAPP ── */
+.whatsappFloat {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--color-gold);
+  color: var(--text-on-gold);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-gold-strong);
+  z-index: 1000;
+  transition: var(--transition-smooth);
+}
+
+.whatsappFloat:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(201, 169, 110, 0.4);
+}
+
+/* ══════════════════════════════════════════
+   CRAFTSMANSHIP SECTION
+   ══════════════════════════════════════════ */
+.craftsmanshipSection {
+  padding: var(--section-padding) 0;
+  background: var(--surface-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.craftsmanshipSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at 30% 50%, rgba(26, 58, 58, 0.3) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════════════
+   PRESS MENTIONS
+   ══════════════════════════════════════════ */
+.pressSection {
+  padding: 80px 0;
+  background: var(--surface-elevated);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.pressGrid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.pressItem {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--text-tertiary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: var(--transition-smooth);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.pressItem:hover {
+  color: var(--color-gold);
+}
+
+/* ══════════════════════════════════════════
+   CONCIERGE / APPOINTMENT
+   ══════════════════════════════════════════ */
+.conciergeSection {
+  padding: var(--section-padding) 0;
+  background: var(--color-teal-midnight);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.conciergeSection::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201, 169, 110, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════ */
+@media (max-width: 1200px) {
+  .productGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .trustGrid { grid-template-columns: repeat(2, 1fr); }
+  .trustItem:nth-child(2) { border-right: none; }
+  .footerGrid { grid-template-columns: 1fr 1fr; }
+  .instagramGrid { grid-template-columns: repeat(3, 1fr); }
+  .categoryGrid { grid-template-columns: repeat(2, 1fr); }
+  .categoryCard { height: 380px; }
+  .pressGrid { gap: 40px; }
+  .pressItem { font-size: 1.1rem; }
+}
+
+@media (max-width: 768px) {
+  .bridalShowcase { flex-direction: column !important; }
+  .showcaseContent { padding: 50px 6% !important; text-align: center; }
+  .showcaseImage { min-height: 400px; width: 100% !important; }
+  .showcaseTitle { font-size: 2.2rem; }
+  .categoryGrid { grid-template-columns: 1fr 1fr; }
+  .categoryCard { height: 300px; }
+  .productGrid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .testimonialGrid { display: flex !important; flex-direction: column !important; gap: 20px; }
+  .trustGrid { grid-template-columns: 1fr 1fr; }
+  .trustItem { border-right: none; border-bottom: 1px solid var(--border-subtle); }
+  .footerGrid { grid-template-columns: 1fr; gap: 40px; }
+  .instagramGrid { grid-template-columns: repeat(3, 1fr); }
+  .collectionBanner { height: 400px; }
+  .pressGrid { gap: 30px; }
+}
+
+@media (max-width: 480px) {
+  .categoryGrid { grid-template-columns: 1fr; }
+  .categoryCard { height: 350px; }
+  .productGrid { grid-template-columns: 1fr; }
+  .trustGrid { grid-template-columns: 1fr; }
+  .instagramGrid { grid-template-columns: repeat(2, 1fr); }
+  .collectionBanner { height: 350px; }
+}

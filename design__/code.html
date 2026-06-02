@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURELIAN | Luxury Jewelry Customizer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#0d0e0f",
+                        "outline-variant": "#4d4635",
+                        "on-primary-container": "#554300",
+                        "surface-container-high": "#292a2a",
+                        "on-primary": "#3c2f00",
+                        "inverse-primary": "#735c00",
+                        "on-secondary": "#313030",
+                        "on-background": "#e3e2e2",
+                        "on-primary-fixed": "#241a00",
+                        "surface-container-highest": "#343535",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "tertiary": "#d0cecd",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-tertiary": "#313030",
+                        "secondary": "#c8c6c5",
+                        "primary-fixed": "#ffe088",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface": "#121414",
+                        "on-error": "#690005",
+                        "tertiary-fixed-dim": "#c9c6c5",
+                        "tertiary-container": "#b5b2b2",
+                        "inverse-surface": "#e3e2e2",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "secondary-container": "#474746",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "surface-bright": "#383939",
+                        "primary-container": "#d4af37",
+                        "background": "#121414",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "surface-tint": "#e9c349",
+                        "surface-container": "#1f2020",
+                        "surface-dim": "#121414",
+                        "outline": "#99907c",
+                        "primary": "#f2ca50",
+                        "surface-container-low": "#1b1c1c",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-tertiary-container": "#464545",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#474746",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#2f3031",
+                        "surface-variant": "#343535",
+                        "on-surface": "#e3e2e2",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-surface-variant": "#d0c5af"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "sidebar-width": "400px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "button": ["Inter"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "label-caps": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-sm-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "button": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-sm-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .backdrop-blur-32px {
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
+        }
+        .luxury-gradient {
+            background: radial-gradient(circle at center, #1a2a2a 0%, #0a0a0a 100%);
+        }
+        .hotspot-glow {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-32px border-b border-primary/20 flex items-center justify-between px-margin-mobile h-16">
+<button class="material-symbols-outlined text-primary scale-95 duration-200 transition-transform">menu</button>
+<span class="font-headline-sm-mobile text-headline-sm-mobile text-primary tracking-[0.2em] uppercase">AURELIAN</span>
+<button class="material-symbols-outlined text-primary scale-95 duration-200 transition-transform">shopping_bag</button>
+</header>
+<main class="pt-16 pb-24 overflow-x-hidden luxury-gradient">
+<!-- Hero Section -->
+<section class="min-h-[60vh] flex flex-col items-center justify-center text-center px-margin-mobile pt-12">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-on-surface mb-4">Craft Your Legacy</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs mb-8">Bespoke artistry meets modern elegance. Design a piece that transcends time.</p>
+<button class="bg-primary-container text-on-primary-container px-gutter py-3 rounded-full font-button text-button uppercase tracking-widest hover:scale-105 transition-transform">
+                Start Building
+            </button>
+</section>
+<!-- Interactive Customizer Canvas -->
+<section class="relative w-full aspect-[3/4] max-w-md mx-auto mb-12 px-margin-mobile">
+<div class="relative w-full h-full rounded-2xl overflow-hidden border border-primary/10 bg-surface-container shadow-2xl">
+<!-- Central Mannequin -->
+<img alt="High-fashion luxury jewelry mannequin with a minimalist dark matte charcoal finish, adorned with a full set of gold and diamond jewelry: necklace, earrings, bajubandh, kamarbandh, and anklets." class="w-full h-full object-cover opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTmXp4UxtgyYdSj3zaEQIS23Mj_DTeHFgP9c-uUZ5eJyW95AyDL9RPPSC62SOm1EtqT5Xs8H-yFFmljbyOePp7lFHLkaB9FTz9ZORNdzd4dqvHVf_cztX6W5pSLYXBGuuMHwCuDIX52mhLMvwYfNzY9QRG6NAVWquiXTWl_YDcTVI-Yw3P9JMNJx8hC-uqjb22yjdHhGkj0PF03QnBnniQ_YPkXzLUVAuLp0YH1-6e1uraI2e0Vy8Up-d9kUcRMJMbVK_U5hIlR1fB"/>
+<!-- Hotspot Markers -->
+<!-- Earrings -->
+<!-- Necklace -->
+<!-- Bracelet -->
+<!-- Ring -->
+<!-- Earrings -->
+<div class="absolute top-[13%] left-[44%] group">
+<div class="w-6 h-6 rounded-full border border-primary bg-primary/20 backdrop-blur-md hotspot-glow animate-pulse flex items-center justify-center cursor-pointer">
+<span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+</div>
+<span class="absolute left-8 top-0 whitespace-nowrap bg-surface/80 border border-primary/20 px-2 py-1 rounded text-[10px] font-label-caps uppercase text-primary opacity-0 group-hover:opacity-100 transition-opacity">Earrings</span>
+</div>
+<!-- Necklace -->
+<div class="absolute top-[22%] left-[49%] group">
+<div class="w-6 h-6 rounded-full border border-primary bg-primary/20 backdrop-blur-md hotspot-glow flex items-center justify-center cursor-pointer">
+<span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+</div>
+<span class="absolute left-8 top-0 whitespace-nowrap bg-surface/80 border border-primary/20 px-2 py-1 rounded text-[10px] font-label-caps uppercase text-primary opacity-0 group-hover:opacity-100 transition-opacity">Necklace</span>
+</div>
+<!-- Right Bajubandh -->
+<div class="absolute top-[28%] left-[34%] group">
+<div class="w-6 h-6 rounded-full border border-primary bg-primary/20 backdrop-blur-md hotspot-glow flex items-center justify-center cursor-pointer">
+<span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+</div>
+<span class="absolute -left-20 top-0 whitespace-nowrap bg-surface/80 border border-primary/20 px-2 py-1 rounded text-[10px] font-label-caps uppercase text-primary opacity-0 group-hover:opacity-100 transition-opacity">Bajubandh</span>
+</div>
+<!-- Left Bajubandh -->
+<div class="absolute top-[29%] left-[61%] group">
+<div class="w-6 h-6 rounded-full border border-primary bg-primary/20 backdrop-blur-md hotspot-glow flex items-center justify-center cursor-pointer">
+<span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+</div>
+<span class="absolute left-8 top-0 whitespace-nowrap bg-surface/80 border border-primary/20 px-2 py-1 rounded text-[10px] font-label-caps uppercase text-primary opacity-0 group-hover:opacity-100 transition-opacity">Bajubandh</span>
+</div>
+<!-- Kamarbandh -->
+<div class="absolute top-[38%] left-[50%] group">
+<div class="w-6 h-6 rounded-full border border-primary bg-primary/20 backdrop-blur-md hotspot-glow flex items-center justify-center cursor-pointer">
+<span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+</div>
+<span class="absolute left-8 top-0 whitespace-nowrap bg-surface/80 border border-primary/20 px-2 py-1 rounded text-[10px] font-label-caps uppercase text-primary opacity-0 group-hover:opacity-100 transition-opacity">Kamarbandh</span>
+</div>
+<!-- Anklets -->
+<div class="absolute bottom-[10%] left-[48%] group">
+<div class="w-6 h-6 rounded-full border border-primary bg-primary/20 backdrop-blur-md hotspot-glow flex items-center justify-center cursor-pointer">
+<span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+</div>
+<span class="absolute left-8 top-0 whitespace-nowrap bg-surface/80 border border-primary/20 px-2 py-1 rounded text-[10px] font-label-caps uppercase text-primary opacity-0 group-hover:opacity-100 transition-opacity">Anklets</span>
+</div></div>
+</section>
+<!-- Selection Panels -->
+<section class="px-margin-mobile space-y-12">
+<!-- Material Selection -->
+<div>
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-4 tracking-widest">Base Material</h3>
+<div class="flex gap-gutter overflow-x-auto pb-4 scrollbar-hide">
+<!-- Gold -->
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-14 h-14 rounded-full border-2 border-primary p-0.5">
+<div class="w-full h-full rounded-full bg-[#D4AF37] shadow-inner"></div>
+</div>
+<span class="font-label-caps text-[10px] text-primary">18K GOLD</span>
+</div>
+<!-- Platinum -->
+<div class="flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
+<div class="w-14 h-14 rounded-full border border-outline-variant p-1">
+<div class="w-full h-full rounded-full bg-[#E5E4E2]"></div>
+</div>
+<span class="font-label-caps text-[10px]">PLATINUM</span>
+</div>
+<!-- Rose Gold -->
+<div class="flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
+<div class="w-14 h-14 rounded-full border border-outline-variant p-1">
+<div class="w-full h-full rounded-full bg-[#B76E79]"></div>
+</div>
+<span class="font-label-caps text-[10px]">ROSE GOLD</span>
+</div>
+<!-- Obsidian -->
+<div class="flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
+<div class="w-14 h-14 rounded-full border border-outline-variant p-1">
+<div class="w-full h-full rounded-full bg-[#1A1A1A]"></div>
+</div>
+<span class="font-label-caps text-[10px] whitespace-nowrap">OBSIDIAN STEEL</span>
+</div>
+</div>
+</div>
+<!-- Gemstone Selection -->
+<div>
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-4 tracking-widest">Primary Gemstone</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container border-2 border-primary p-4 rounded-xl flex flex-col items-center text-center">
+<div class="w-10 h-10 mb-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">diamond</span>
+</div>
+<span class="font-label-caps text-[11px] text-primary leading-tight">BRILLIANT CUT DIAMOND</span>
+</div>
+<div class="bg-surface-container border border-outline-variant/30 p-4 rounded-xl flex flex-col items-center text-center opacity-70 hover:opacity-100 transition-opacity">
+<div class="w-10 h-10 mb-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-3xl">auto_awesome</span>
+</div>
+<span class="font-label-caps text-[11px] text-on-surface leading-tight">CEYLON SAPPHIRE</span>
+</div>
+</div>
+</div>
+<!-- Setting & Engraving -->
+<div>
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-4 tracking-widest">Custom Engraving</h3>
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-body-lg font-body-lg py-3 px-0 placeholder:text-outline-variant/50 transition-colors uppercase tracking-widest" placeholder="ENTER INSCRIPTION..." type="text"/>
+<div class="absolute right-0 bottom-3">
+<span class="material-symbols-outlined text-primary text-sm">edit_note</span>
+</div>
+</div>
+<p class="mt-2 text-[10px] text-outline font-label-caps">LIMITED TO 12 CHARACTERS</p>
+</div>
+<!-- Summary -->
+<div class="bg-surface-container-highest/40 backdrop-blur-32px border border-primary/20 rounded-2xl p-gutter mt-8">
+<div class="flex justify-between items-end mb-6">
+<div>
+<p class="font-label-caps text-[11px] text-on-surface-variant uppercase mb-1">Estimated Value</p>
+<p class="font-headline-md text-headline-md text-primary">$18,450.00</p>
+</div>
+<div class="text-right">
+<p class="font-label-caps text-[10px] text-outline uppercase">Delivery Est.</p>
+<p class="font-body-md text-body-md text-on-surface">4 - 6 WEEKS</p>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-4 rounded-full font-button text-button uppercase tracking-[0.15em] font-bold hover:brightness-110 transition-all active:scale-95">
+                    ADD TO PRIVATE COLLECTION
+                </button>
+</div>
+</section>
+<!-- Footer Visual Spacer -->
+<div class="h-12"></div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface/90 backdrop-blur-32px border-t border-primary/20 flex justify-around items-center h-20 px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-primary bg-primary/10 rounded-xl px-4 py-1 Active: scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">auto_fix</span>
+<span class="font-label-caps text-label-caps">Builder</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary/80 transition-colors" href="#">
+<span class="material-symbols-outlined">diamond</span>
+<span class="font-label-caps text-label-caps">Showroom</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary/80 transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-caps text-label-caps">Profile</span>
+</a>
+</nav>
+</body></html>

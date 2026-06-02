@@ -1,0 +1,210 @@
+/* Checkout Page — Luxury Teal × Gold */
+.checkoutContainer {
+  min-height: 100vh;
+  background: var(--surface-primary);
+  padding-top: 100px;
+}
+
+.content {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 60px var(--container-padding);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 50px;
+  letter-spacing: 0.02em;
+}
+
+.checkoutLayout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 40px;
+  align-items: start;
+}
+
+.checkoutForm {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.formSection {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-subtle);
+  padding: 36px;
+  border-radius: 4px;
+}
+
+.formSectionTitle {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  letter-spacing: 0.03em;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroup label {
+  color: var(--text-secondary);
+  font-size: var(--text-body-sm);
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.inputGroup input,
+.inputGroup select {
+  background: rgba(11, 30, 30, 0.5);
+  border: 1px solid var(--border-light);
+  padding: 14px 18px;
+  color: var(--text-primary);
+  font-size: var(--text-body-sm);
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color 0.3s ease;
+  border-radius: 2px;
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus {
+  border-color: var(--color-gold);
+}
+
+.inputGroup input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+/* ORDER SUMMARY */
+.summary {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-subtle);
+  padding: 36px 28px;
+  height: fit-content;
+  border-radius: 4px;
+  position: sticky;
+  top: 100px;
+}
+
+.summaryTitle {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.summaryItems {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.summaryItem {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+}
+
+.itemImageWrapper {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  background: var(--color-teal-dark);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.itemInfo {
+  flex: 1;
+}
+
+.itemInfo h4 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.itemQty {
+  font-size: var(--text-caption);
+  color: var(--text-tertiary);
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 0 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1.05rem;
+}
+
+.totalRow span:last-child {
+  color: var(--color-gold);
+  font-size: 1.2rem;
+}
+
+.payBtn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 4px;
+  opacity: 1;
+  transition: var(--transition-smooth);
+}
+
+.payBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+  .checkoutLayout { grid-template-columns: 1fr; }
+  .summary { position: static; }
+}
+
+@media (max-width: 600px) {
+  .formGrid { grid-template-columns: 1fr; }
+  .formSection { padding: 24px 20px; }
+}
