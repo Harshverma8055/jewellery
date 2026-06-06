@@ -115,7 +115,7 @@ export default function AuthPage() {
             {/* Inner parallax effect */}
             <motion.div style={{ transform: 'translateZ(60px)' }}>
               <div className={styles.header}>
-              <h1 className={styles.brand}>Samaira</h1>
+              <h1 className={styles.brand}>Samaira by MKM</h1>
               <p className={styles.subtitle}>Enter the world of absolute luxury</p>
             </div>
 

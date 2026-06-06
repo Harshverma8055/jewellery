@@ -30,7 +30,7 @@ export default function CartPage() {
         {/* Marquee Background */}
         <div className={styles.marqueeWrapper}>
           <motion.div style={{ x: marqueeX, display: "flex", gap: "2rem" }}>
-            <span className={styles.marqueeText}>SAMAIRA · LUXURY · EXCLUSIVE · SAMAIRA · LUXURY · EXCLUSIVE · </span>
+            <span className={styles.marqueeText}>SAMAIRA BY MKM · LUXURY · EXCLUSIVE · SAMAIRA BY MKM · LUXURY · EXCLUSIVE · </span>
           </motion.div>
         </div>
 

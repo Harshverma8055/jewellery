@@ -14,7 +14,7 @@ export default function Preloader() {
     return () => clearTimeout(timer);
   }, []);
 
-  const brandLetters = 'SAMAIRA'.split('');
+  const brandLetters = 'SAMAIRA BY MKM'.split('');
 
   return (
     <AnimatePresence>

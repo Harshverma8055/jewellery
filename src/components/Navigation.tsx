@@ -111,7 +111,7 @@ export default function Navigation() {
             fontFamily: 'var(--font-display)',
             fontWeight: 400,
           }}>
-            Samaira
+            Samaira by MKM
           </div>
         </Link>
 
@@ -171,7 +171,7 @@ export default function Navigation() {
                 fontFamily: 'var(--font-display)',
                 fontWeight: 400,
               }}>
-                Samaira
+                Samaira by MKM
               </div>
               <button 
                 onClick={() => setIsOpen(false)} 
@@ -311,7 +311,7 @@ export default function Navigation() {
               }}
             >
               <span>Sri Ganganagar, Rajasthan</span>
-              <span>© {new Date().getFullYear()} Samaira</span>
+              <span>© {new Date().getFullYear()} Samaira by MKM</span>
             </motion.div>
           </motion.div>
         )}

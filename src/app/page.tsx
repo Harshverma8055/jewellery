@@ -303,7 +303,7 @@ export default function Home() {
         <div className="container">
           <div className={styles.footerGrid}>
             <div>
-              <div className={styles.footerLogo}>Samaira</div>
+              <div className={styles.footerLogo}>Samaira by MKM</div>
               <p className={styles.footerDesc}>Crafting timeless elegance and preserving heritage through exquisite jewellery designs. Every piece is a masterpiece, every moment is golden.</p>
             </div>
             <div>
@@ -332,7 +332,7 @@ export default function Home() {
               <p style={{ marginTop: '5px' }}><a href="mailto:mitalikhemka806@gmail.com" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>mitalikhemka806@gmail.com</a></p>
             </div>
           </div>
-          <div className={styles.footerBottom}>&copy; {new Date().getFullYear()} Samaira Jewellers Pvt. Ltd. &nbsp;·&nbsp; All Rights Reserved &nbsp;·&nbsp; BIS Hallmark Licensed</div>
+          <div className={styles.footerBottom}>&copy; {new Date().getFullYear()} Samaira by MKM Jewellers Pvt. Ltd. &nbsp;·&nbsp; All Rights Reserved &nbsp;·&nbsp; BIS Hallmark Licensed</div>
         </div>
       </footer>
 

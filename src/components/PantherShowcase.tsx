@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform, useScroll } from 'framer-motion';
 import Image from 'next/image';
 import ReservationModal from './ReservationModal';
 import { useCart } from '@/context/CartContext';
@@ -17,6 +17,17 @@ export default function PantherShowcase() {
   const { addToCart } = useCart();
   const router = useRouter();
   
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const titleScale = useTransform(scrollYProgress, [0, 0.4, 0.6, 1], [0.8, 1, 1, 1.2]);
+  const titleOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
+  const titleY = useTransform(scrollYProgress, [0, 0.4, 0.6, 1], [100, 0, 0, -100]);
+  const titleBlur = useTransform(scrollYProgress, [0, 0.35, 0.65, 1], ['blur(15px)', 'blur(0px)', 'blur(0px)', 'blur(15px)']);
+  const letterSpacing = useTransform(scrollYProgress, [0, 0.5, 1], ['-0.05em', '0.02em', '0.15em']);
+
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -251,7 +262,23 @@ export default function PantherShowcase() {
 
       {/* Cinematic Copy Left */}
       <div className="heroUILeft">
-        <h2 className="heroTitleText">La Panthère</h2>
+        <motion.h2 
+          className="heroTitleText"
+          style={{
+            scale: titleScale,
+            opacity: titleOpacity,
+            y: titleY,
+            filter: titleBlur,
+            letterSpacing: letterSpacing,
+            display: 'inline-block',
+            background: 'linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold-dim) 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            textShadow: '0 5px 30px rgba(201, 169, 110, 0.3)',
+          }}
+        >
+          La Panthère
+        </motion.h2>
         <p className="heroDescText">
           A fierce declaration of luxury. Handcrafted from 18K solid gold, enveloped in hand-set diamonds, and finished with profound black enamel accents. The piercing emerald gaze captures the essence of absolute power and elegance.
         </p>
